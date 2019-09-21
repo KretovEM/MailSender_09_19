@@ -6,7 +6,31 @@
         xmlns:local="clr-namespace:WpfTestMailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать"/>
+                <MenuItem Header="Открыть"/>
+                <MenuItem Header="Сохранить"/>
+                <Separator/>
+                <MenuItem Header="Выход" Click="ExitMenuItem_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Сервис">
+                <MenuItem Header="Параметры" IsEnabled="False"/>
+            </MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="О программе" IsEnabled="False"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock>Готов к труду и обороне</TextBlock>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Панели"></TabItem>
+            
+            <TabItem Header="Списки"></TabItem>
+            <TabItem Header="Планировщик"></TabItem>
+            <TabItem Header="Письма"></TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
