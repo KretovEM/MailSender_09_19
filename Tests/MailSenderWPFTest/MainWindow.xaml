@@ -9,8 +9,25 @@
     <Grid>
         <Label Content="Имя пользователя" HorizontalAlignment="Left" Height="30" Margin="66,64,0,0" VerticalAlignment="Top" Width="175"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Height="30" Margin="354,64,0,0" VerticalAlignment="Top" Width="175"/>
-        <TextBox Text="Имя пользователя" Width="200" Height="20" Margin="66,99,526,300"></TextBox>
-        <PasswordBox Width="200" Height="20" Margin="354,99,238,300"></PasswordBox>
-        <Button Content="Отправить" Height="20" Width="200"></Button>
+        <PasswordBox HorizontalAlignment="Left" 
+                     VerticalAlignment="Top"
+                     Name="passboxPassword"
+                     Width="200" Height="20" 
+                     Margin="354,99,0,0"/>
+
+        <TextBox Name="tboxUserName" 
+                 Text="Имя пользователя" 
+                 Width="200" Height="20" 
+                 Margin="66,99,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"/>
+        <Button Content="Отправить" Height="20" Width="200" Click="SendButtonClick" Margin="200,150,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                />
+
+
+
     </Grid>
 </Window>

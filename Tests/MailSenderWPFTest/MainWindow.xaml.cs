@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using System.Net.Mail;
+using System.Net;
+using System.Security;
+using System;
 
 namespace MailSenderWPFTest
 {
@@ -23,6 +14,42 @@ namespace MailSenderWPFTest
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SendButtonClick(object sender, RoutedEventArgs e)
+        {
+            var host = "smtp.yandex.ru";
+            var port = 587;
+
+            var userName = tboxUserName.Text;
+            var password = passboxPassword.SecurePassword;
+
+            var msg = "Hello world!!! " + DateTime.Now;
+            using (var client = new SmtpClient(host, port))
+            {
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(userName, password);
+
+                using (var message = new MailMessage())
+                {
+                    message.From = new MailAddress("gandjubas47@yandex.ru");
+                    message.To.Add(new MailAddress("gandjubas47@yandex.ru"));
+                    message.Subject = "Заголовок письма от " + DateTime.Now;
+                    message.Body = msg;
+
+                    try
+                    {
+                        client.Send(message);
+                        MessageBox.Show("Почта успешно отправлена",
+                            "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    catch (Exception error)
+                    {
+                        MessageBox.Show(error.Message,
+                            "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }    
+            }
         }
     }
 }
