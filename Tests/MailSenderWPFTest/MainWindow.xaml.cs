@@ -25,6 +25,7 @@ namespace MailSenderWPFTest
             var password = passboxPassword.SecurePassword;
 
             var msg = StaticData.TestMessage;
+
             using (var client = new SmtpClient(host, port))
             {
                 client.EnableSsl = true;
@@ -49,6 +50,15 @@ namespace MailSenderWPFTest
                             StaticData.Error, MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }    
+            }
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
