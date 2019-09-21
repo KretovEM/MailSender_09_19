@@ -18,13 +18,13 @@ namespace MailSenderWPFTest
 
         private void SendButtonClick(object sender, RoutedEventArgs e)
         {
-            var host = "smtp.yandex.ru";
-            var port = 587;
+            var host = StaticData.YandexSmptHost;
+            var port = StaticData.YandexSmtpPort_587;
 
             var userName = tboxUserName.Text;
             var password = passboxPassword.SecurePassword;
 
-            var msg = "Hello world!!! " + DateTime.Now;
+            var msg = StaticData.TestMessage;
             using (var client = new SmtpClient(host, port))
             {
                 client.EnableSsl = true;
@@ -32,21 +32,21 @@ namespace MailSenderWPFTest
 
                 using (var message = new MailMessage())
                 {
-                    message.From = new MailAddress("gandjubas47@yandex.ru");
-                    message.To.Add(new MailAddress("gandjubas47@yandex.ru"));
-                    message.Subject = "Заголовок письма от " + DateTime.Now;
+                    message.From = new MailAddress(StaticData.MailAdressGandju);
+                    message.To.Add(new MailAddress(StaticData.MailAdressGandju));
+                    message.Subject = StaticData.TestSubject;
                     message.Body = msg;
 
                     try
                     {
                         client.Send(message);
-                        MessageBox.Show("Почта успешно отправлена",
-                            "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show(StaticData.MailIsSend,
+                            StaticData.Success, MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     catch (Exception error)
                     {
                         MessageBox.Show(error.Message,
-                            "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                            StaticData.Error, MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }    
             }
