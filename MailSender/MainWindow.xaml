@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:data ="clr-namespace:MailSenderLib.Data;assembly=MailSenderLib"
+        xmlns:entityes ="clr-namespace:MailSenderLib.Entityes;assembly=MailSenderLib"
         xmlns:local="clr-namespace:WpfTestMailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -23,99 +26,93 @@
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
-            <TextBlock>Готов к труду и обороне</TextBlock>
+            <StatusBarItem DockPanel.Dock="Right">
+                <TextBlock>Готов к труду и обороне</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <ProgressBar Value="20" Width="100" Height="15"/>
+            </StatusBarItem>
         </StatusBar>
         <TabControl>
-            <TabItem Header="Панели">
-                <TabControl TabStripPlacement="Bottom">
-                    <TabItem Header="Grid">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="107*"/>
-                                <ColumnDefinition Width="250"/>
-                                <ColumnDefinition Width="158*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="22*"/>
-                                <RowDefinition Height="55*"/>
-                                <RowDefinition Height="74*"/>
-                                <RowDefinition Height="172*"/>
-                            </Grid.RowDefinitions>
+            <TabItem Header="Рассылка">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ToolBarTray Grid.Row="0">
+                        <ToolBar>
+                            <Label MinWidth="85">Отправители</Label>
+                            <ComboBox MinWidth="100" MinHeight="25" 
+                                      ItemsSource="{x:Static data:TestData.Senders}"
+                                      DisplayMemberPath="Name" 
+                                      SelectedIndex="0"/>
 
-                            <TextBox Grid.Column="2" Grid.Row="1" Background="Red">123</TextBox>
-
-                            <Ellipse Fill="Blue" Stroke="Red" StrokeThickness="2"
-                                         Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
-
-                            <Button Content="Button" Grid.Column="1" Margin="70,25,80,10" Grid.Row="1" d:LayoutOverrides="Height"/>
-
-                        </Grid>
-                    </TabItem>
-                    <TabItem Header="StackPanel">
-                        <StackPanel>
-                            <Button HorizontalAlignment="Center" Padding="30,10" Margin="0,10">Кнопка 1</Button>
-                            <Button HorizontalAlignment="Left">Кнопка 2</Button>
-                            <Button HorizontalAlignment="Right">Кнопка 3</Button>
-                            <Button>Кнопка 4</Button>
-                            <TextBox>Поле ввода</TextBox>
-                            <Calendar></Calendar>
-                            <Button>
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="https://www.pngkey.com/png/full/349-3498842_russia-hand-waving-flag-png-russia-flag-russia.png" Height="30"></Image>
-                                    <TextBlock Text="Флаг на кнопке" VerticalAlignment="Center"/>
-                                </StackPanel>
+                            <Button ToolTip="Создать">
+                                <fa:ImageAwesome Height="18" Icon="Plus" Foreground="Green"/>
                             </Button>
-                        </StackPanel>
+                            <Button ToolTip="Редактировать">
+                                <fa:ImageAwesome Height="18" Icon="Edit" Foreground="Orange"/>
+                            </Button>
+                            <Button ToolTip="Удалить">
+                                <fa:ImageAwesome Height="18" Icon="Trash" Foreground="Red"/>
+                            </Button>
+                        </ToolBar>
+                        <ToolBar Band="1">
+                            <Label MinWidth="85">Сервера</Label>
+                            <ComboBox MinWidth="100" MinHeight="25" MaxWidth="150"
+                                      ItemsSource="{x:Static data:TestData.Servers}"
+                                      SelectedIndex="0">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type entityes:Server}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}"/>
+                                            <TextBlock Text="{Binding Address}" Margin="3,0,0,0" Opacity="0.6"
+                                                       ToolTip="{Binding Port}"/>
+                                            <!--<TextBlock Text="{Binding Port, StringFormat=:{0}}" Opacity="0.6"/>-->
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
-                    </TabItem>
-                    <TabItem Header="DockPanel">
-                        <DockPanel>
-                            <Button DockPanel.Dock="Right">Кнопка 1</Button>
-                            <Button DockPanel.Dock="Bottom">Кнопка 2</Button>
-                            <Button DockPanel.Dock="Top">Кнопка 3</Button>
-                            <Button>Кнопка 4</Button>
-                            <Rectangle Fill="Blue" Stroke="Red" StrokeThickness="2" 
-                                           StrokeDashArray="5,2" RadiusX="98" RadiusY="98"/>
-                        </DockPanel>
-
-                    </TabItem>
-                    <TabItem Header="Canvas">
-                        <Canvas>
-                            <Button Padding="50,20" Canvas.Top="50" Canvas.Left="20">Кнопка</Button>
-                            <Label Canvas.Bottom="20" Canvas.Right="10">Метка</Label>
-                        </Canvas>
-                    </TabItem>
-                    <TabItem Header="WrapPanel">
-                        <WrapPanel>
-                            <Button Content="Кнопка 1" Padding="50,20"/>
-                            <Button Content="Кнопка 2" Padding="50,20"/>
-                            <Label>Метка</Label>
-                            <Button Content="Кнопка 3" Padding="50,20"/>
-                            <Button Content="Кнопка 4" Padding="50,20"/>
-                            <Label>Метка</Label>
-                            <Button Content="Кнопка 5" Padding="50,20"/>
-                            <PasswordBox Password="123"></PasswordBox>
-                            <Button Content="Кнопка 6" Padding="50,20"/>
-                            <Label>Метка</Label>
-                            <Button Content="Кнопка 7" Padding="50,20"/>
-                        </WrapPanel>
-                    </TabItem>
-                    <TabItem Header="UniformGrid">
-                        <UniformGrid Columns="2" VerticalAlignment="Top">
-                            <TextBlock Text="Фамилия:"/>
-                            <TextBox>Поле ввода фамилии</TextBox>
-                            <TextBlock>Имя:</TextBlock>
-                            <TextBox>Поле ввода имени</TextBox>
-                            <TextBlock>Отчество:</TextBlock>
-                            <TextBox>Поле ввода отчества</TextBox>
-                            <TextBlock>Номер группы:</TextBlock>
-                            <TextBox>Поле ввода группы</TextBox>
-
-                        </UniformGrid>
-                    </TabItem>
-                </TabControl>
+                            <Button ToolTip="Создать">
+                                <fa:ImageAwesome Height="18" Icon="Plus" Foreground="Green"/>
+                            </Button>
+                            <Button ToolTip="Редактировать">
+                                <fa:ImageAwesome Height="18" Icon="Edit" Foreground="Orange"/>
+                            </Button>
+                            <Button ToolTip="Удалить">
+                                <fa:ImageAwesome Height="18" Icon="Trash" Foreground="Red"/>
+                            </Button>
+                        </ToolBar>
+                        <ToolBar>
+                            <Label MinWidth="85">Перейти в планировщик</Label>
+                            <Button ToolTip="Перейти">
+                                <fa:ImageAwesome Height="18" Icon="ClockOutline" Foreground="Green"/>
+                            </Button>
+                        </ToolBar>
+                        <ToolBar Band="1">
+                            <Label MinWidth="85">Получатели</Label>
+                            <Button ToolTip="Создать">
+                                <fa:ImageAwesome Height="18" Icon="Plus" Foreground="Green"/>
+                            </Button>
+                            <Button ToolTip="Редактировать">
+                                <fa:ImageAwesome Height="18" Icon="Edit" Foreground="Orange"/>
+                            </Button>
+                            <Button ToolTip="Удалить">
+                                <fa:ImageAwesome Height="18" Icon="Trash" Foreground="Red"/>
+                            </Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <DataGrid Grid.Row="1" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID"/>
+                            <DataGridTextColumn Header="Имя"/>
+                            <DataGridTextColumn Header="Адрес" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </TabItem>
-            <TabItem Header="Списки"></TabItem>
             <TabItem Header="Планировщик"></TabItem>
             <TabItem Header="Письма"></TabItem>
         </TabControl>
