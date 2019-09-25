@@ -9,6 +9,7 @@
         xmlns:db ="clr-namespace:MailSenderLib.Data.LinqToSql;assembly=MailSenderLib"
         xmlns:local="clr-namespace:WpfTestMailSender"
         xmlns:linqToSql="clr-namespace:MailSenderLib.Data.LinqToSql;assembly=MailSenderLib"
+        xmlns:ctrls="clr-namespace:WpfTestMailSender.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
@@ -32,10 +33,15 @@
                 <TextBlock>Готов к труду и обороне</TextBlock>
             </StatusBarItem>
             <StatusBarItem>
+                <ctrls:TabItemSwitcher Width="120" 
+                                       LeftButtonClick="TabItemSwitcher_OnLeftButtonClick"
+                                       RightButtonClick="TabItemSwitcher_OnRightButtonClick"></ctrls:TabItemSwitcher>
+            </StatusBarItem>
+            <StatusBarItem>
                 <ProgressBar Value="20" Width="100" Height="15"/>
             </StatusBarItem>
         </StatusBar>
-        <TabControl>
+        <TabControl Name="MainTabControl">
             <TabItem Header="Рассылка">
                 <Grid>
                     <Grid.Resources>
