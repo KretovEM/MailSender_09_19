@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfTestMailSender.Controls;
 
 namespace WpfTestMailSender
 {
@@ -28,6 +29,29 @@ namespace WpfTestMailSender
         private void ExitMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void TabItemSwitcher_OnRightButtonClick(object sender, EventArgs e)
+        {
+            if (!(sender is TabItemSwitcher switcher)) return;
+            MainTabControl.SelectedIndex++;
+
+            if (MainTabControl.SelectedIndex == MainTabControl.Items.Count)
+            {
+                switcher.LeftButtonVisible = false;
+            }
+
+        }
+        private void TabItemSwitcher_OnLeftButtonClick(object sender, EventArgs e)
+        {
+            if (!(sender is TabItemSwitcher switcher)) return;
+
+            MainTabControl.SelectedIndex--;
+
+            if (MainTabControl.SelectedIndex == 0)
+            {
+                switcher.LeftButtonVisible = false;
+            }
         }
     }
 }
