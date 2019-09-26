@@ -45,7 +45,7 @@
             <TabItem Header="Рассылка">
                 <Grid>
                     <Grid.Resources>
-                        <db:MailSenderDBDataContext x:Key="DataBase"></db:MailSenderDBDataContext>
+                        <db:MailSenderDBDataContext x:Key="DataBase"/>
                     </Grid.Resources>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -53,7 +53,7 @@
                     </Grid.RowDefinitions>
                     <ToolBarTray Grid.Row="0">
                         <ToolBar>
-                            <Label MinWidth="85">Отправители</Label>
+                            <!--Label MinWidth="85">Отправители</>
                             <ComboBox MinWidth="100" MinHeight="25" 
                                       ItemsSource="{x:Static data:TestData.Senders}"
                                       DisplayMemberPath="Name" 
@@ -67,10 +67,13 @@
                             </Button>
                             <Button ToolTip="Удалить">
                                 <fa:ImageAwesome Height="18" Icon="Trash" Foreground="Red"/>
-                            </Button>
+                            </Button-->
+                            <ctrls:ListController Items="{x:Static data:TestData.Senders}"
+                                                  PanelName="Отправитель"
+                                                  ViewPropertyPath="Name"/>
                         </ToolBar>
                         <ToolBar Band="1">
-                            <Label MinWidth="85">Сервера</Label>
+                            <!--<Label MinWidth="85">Сервера</Label>
                             <ComboBox MinWidth="100" MinHeight="25" MaxWidth="150"
                                       ItemsSource="{x:Static data:TestData.Servers}"
                                       SelectedIndex="0">
@@ -80,7 +83,7 @@
                                             <TextBlock Text="{Binding Name}"/>
                                             <TextBlock Text="{Binding Address}" Margin="3,0,0,0" Opacity="0.6"
                                                        ToolTip="{Binding Port}"/>
-                                            <!--<TextBlock Text="{Binding Port, StringFormat=:{0}}" Opacity="0.6"/>-->
+                                            <TextBlock Text="{Binding Port, StringFormat=:{0}}" Opacity="0.6"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
@@ -94,7 +97,20 @@
                             </Button>
                             <Button ToolTip="Удалить">
                                 <fa:ImageAwesome Height="18" Icon="Trash" Foreground="Red"/>
-                            </Button>
+                            </Button>-->
+                            <ctrls:ListController PanelName="Сервера"
+                                                  Items="{x:Static data:TestData.Servers}"                                                  >
+                                <ctrls:ListController.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type entityes:Server}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}"/>
+                                            <TextBlock Text="{Binding Address}" Margin="3,0,0,0" Opacity="0.6"
+                                                       ToolTip="{Binding Port}"/>
+                                            <TextBlock Text="{Binding Port, StringFormat=:{0}}" Opacity="0.6"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ctrls:ListController.ItemTemplate>
+                            </ctrls:ListController>
                         </ToolBar>
                         <ToolBar>
                             <Label MinWidth="85">Перейти в планировщик</Label>
