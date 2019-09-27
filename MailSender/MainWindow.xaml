@@ -11,7 +11,10 @@
         xmlns:linqToSql="clr-namespace:MailSenderLib.Data.LinqToSql;assembly=MailSenderLib"
         xmlns:ctrls="clr-namespace:WpfTestMailSender.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding WidowTitle}" 
+        Height="450" Width="800"
+         
+        DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -43,10 +46,7 @@
         </StatusBar>
         <TabControl Name="MainTabControl">
             <TabItem Header="Рассылка">
-                <Grid>
-                    <Grid.Resources>
-                        <db:MailSenderDBDataContext x:Key="DataBase"/>
-                    </Grid.Resources>
+                <Grid> 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition/>
@@ -133,7 +133,7 @@
                     </ToolBarTray>
                     <DataGrid Grid.Row="1" 
                               AutoGenerateColumns="False" 
-                              ItemsSource="{Binding Recipients, Source={StaticResource DataBase}}"
+                              
                               GridLinesVisibility="Vertical" 
                               AlternatingRowBackground="LightBlue"
                               IsReadOnly="True"
