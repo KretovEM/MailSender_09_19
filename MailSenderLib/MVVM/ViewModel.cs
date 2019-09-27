@@ -17,7 +17,13 @@ namespace MailSenderLib.MVVM
 
         protected virtual bool Set<T>(ref T field, T Value, [CallerMemberName] string PropertyName = null)
         {
-            //if (Equals(field, Value))
+            if (Equals(field, Value))
+            {
+                return false;
+            }
+
+            field = Value;
+            OnPropertyChanged(PropertyName);
             return true;
         }
     }

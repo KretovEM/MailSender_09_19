@@ -9,16 +9,23 @@ namespace MailSenderLib.MVVM
 {
     class LambdaCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
-
-        public bool CanExecute(object parameter)
+        public event EventHandler CanExecuteChanged
         {
-            throw new NotImplementedException();
+            add => CommandManager.RequerySuggested += value;
+            remove => CommandManager.RequerySuggested -= value;
         }
 
-        public void Execute(object parameter)
+        private readonly Action<object> _Execute;
+        private readonly Func<object, bool> _CanExecute;
+        public LambdaCommand(Action<object> Execute, Func<object, bool> CanExecute = null)
         {
-            throw new NotImplementedException();
+            _Execute = Execute ?? throw  new ArgumentNullException(nameof(Execute));
+            _CanExecute = CanExecute;
         }
+
+
+        public bool CanExecute(object parameter) => _CanExecute?.Invoke(parameter) ?? true;
+
+        public void Execute(object parameter) => _Execute(parameter);
     }
 }

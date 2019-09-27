@@ -7,11 +7,11 @@ using System;
 namespace MailSenderWPFTest
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MailSenderWpfTestWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MailSenderWpfTestWindow : Window
     {
-        public MainWindow()
+        public MailSenderWpfTestWindow()
         {
             InitializeComponent();
         }
