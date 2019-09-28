@@ -49,7 +49,7 @@ namespace WpfTestMailSender.ViewModel
 
             services.Register<RecipientsDataProvider>();
 
-            services.Register<MailSenderDBDataContext>();
+            services.Register(() => new MailSenderDBDataContext());
         }
 
         public MainWindowViewModel MainWindowModel =>

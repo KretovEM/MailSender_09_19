@@ -28,7 +28,7 @@ namespace WpfTestMailSender.ViewModel
         {
             _recipientsDataProvider = recipientsDataProvider;
 
-
+            RefreshData();
         }
 
         private void RefreshData()

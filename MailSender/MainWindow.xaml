@@ -10,6 +10,7 @@
         xmlns:local="clr-namespace:WpfTestMailSender"
         xmlns:linqToSql="clr-namespace:MailSenderLib.Data.LinqToSql;assembly=MailSenderLib"
         xmlns:ctrls="clr-namespace:WpfTestMailSender.Controls"
+        xmlns:view="clr-namespace:WpfTestMailSender.View"
         mc:Ignorable="d"
         Title="{Binding WidowTitle}" 
         Height="450" Width="800"
@@ -131,19 +132,9 @@
                             </Button>
                         </ToolBar>
                     </ToolBarTray>
-                    <DataGrid Grid.Row="1" 
-                              AutoGenerateColumns="False" 
-                              
-                              GridLinesVisibility="Vertical" 
-                              AlternatingRowBackground="LightBlue"
-                              IsReadOnly="True"
-                              HeadersVisibility="Column">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
-                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding Address}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <Grid Grid.Row="1">
+                        <view:RecipientsView/>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Планировщик">
