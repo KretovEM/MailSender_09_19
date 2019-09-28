@@ -13,14 +13,16 @@
             <TextBlock>Фильтр</TextBlock>
             <TextBox/>
         </DockPanel>
-        <Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" Padding="30,10" Margin="0,7">Обновить</Button>
-        <DataGrid Grid.Row="1" 
-                              AutoGenerateColumns="False" 
-                              ItemsSource="{Binding Recipients}"
-                              GridLinesVisibility="Vertical" 
-                              AlternatingRowBackground="LightBlue"
-                              IsReadOnly="True"
-                              HeadersVisibility="Column">
+        <Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" Padding="30,10" Margin="0,7"
+                Content="ОБновить" Command="{Binding RefreshDataCommand}"/>
+        <DataGrid Grid.Row="1"
+                  SelectedItem="{Binding SelectedRecipient}"
+                  AutoGenerateColumns="False" 
+                  ItemsSource="{Binding Recipients}"
+                  GridLinesVisibility="Vertical" 
+                  AlternatingRowBackground="LightBlue"
+                  IsReadOnly="True"
+                  HeadersVisibility="Column">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>

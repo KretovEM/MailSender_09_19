@@ -133,7 +133,14 @@
                         </ToolBar>
                     </ToolBarTray>
                     <Grid Grid.Row="1">
-                        <view:RecipientsView/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <view:RecipientsView Grid.Column="0"/>
+                        <view:RecipientsEditor Grid.Column="1" Margin="5"/>
+                        <GridSplitter Grid.Column="1" Width="4" Background="Transparent"
+                                      VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
                     </Grid>
                 </Grid>
             </TabItem>
