@@ -62,7 +62,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Services\RecipientsDataProvider.cs" />
+    <Compile Include="Services\InMemory\InMemory.cs" />
+    <Compile Include="Services\Interfaces\IRecipientsDataProvider.cs" />
+    <Compile Include="Services\LinqToSql\LinqToSqlRecipientsDataProvider.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

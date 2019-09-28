@@ -47,7 +47,8 @@ namespace WpfTestMailSender.ViewModel
 
             services.Register<MainWindowViewModel>();
 
-            services.Register<RecipientsDataProvider>();
+            services.Register<IRecipientsDataProvider,LinqToSqlRecipientsDataProvider>();
+            //services.Register<IRecipientsDataProvider,InMemoryRecipientsDataProvider>();
 
             services.Register(() => new MailSenderDBDataContext());
         }

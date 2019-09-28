@@ -7,10 +7,10 @@ using MailSenderLib.Data.LinqToSql;
 
 namespace MailSenderLib.Services
 {
-    public class RecipientsDataProvider
+    public class LinqToSqlRecipientsDataProvider : IRecipientsDataProvider
     {
         private readonly MailSenderDBDataContext _db;
-        public RecipientsDataProvider(MailSenderDBDataContext db)
+        public LinqToSqlRecipientsDataProvider(MailSenderDBDataContext db)
         {
             _db = db;
         }

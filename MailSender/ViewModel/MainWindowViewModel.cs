@@ -14,7 +14,7 @@ namespace WpfTestMailSender.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private RecipientsDataProvider _recipientsDataProvider;
+        private IRecipientsDataProvider _recipientsDataProvider;
 
         private string _WidowTitle = "Рассыльщик почты v0.1";
 
@@ -44,7 +44,7 @@ namespace WpfTestMailSender.ViewModel
 
         public ICommand SaveChangesCommand { get; }
 
-        public MainWindowViewModel(RecipientsDataProvider recipientsDataProvider)
+        public MainWindowViewModel(IRecipientsDataProvider recipientsDataProvider)
         {
             _recipientsDataProvider = recipientsDataProvider;
 
