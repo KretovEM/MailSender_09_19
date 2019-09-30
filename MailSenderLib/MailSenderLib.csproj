@@ -50,6 +50,13 @@
       <DependentUpon>MailSenderDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\TestData.cs" />
+    <Compile Include="Entityes\Base\BaseEntity.cs" />
+    <Compile Include="Entityes\Base\HumanEntity.cs" />
+    <Compile Include="Entityes\Base\NamedEntity.cs" />
+    <Compile Include="Entityes\Email.cs" />
+    <Compile Include="Entityes\Recipient.cs" />
+    <Compile Include="Entityes\RecipientsList.cs" />
+    <Compile Include="Entityes\SchedulerTask.cs" />
     <Compile Include="Entityes\Sender.cs" />
     <Compile Include="Entityes\Server.cs" />
     <Compile Include="MailSenderService.cs" />

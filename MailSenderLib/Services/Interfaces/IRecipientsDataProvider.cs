@@ -1,9 +1,5 @@
-﻿using MailSenderLib.Data.LinqToSql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using MailSenderLib.Entityes;
 
 namespace MailSenderLib.Services
 {
@@ -11,8 +7,15 @@ namespace MailSenderLib.Services
     {
         IEnumerable<Recipient> GetAll();
 
+        Recipient GetById(int id);
+
         int Create(Recipient recipient);
+        
+        void Edit(int id, Recipient item);
+
+        bool Remove(int id);
 
         void SaveChanges();
+
     }
 }
