@@ -70,7 +70,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Services\InMemory\InMemory.cs" />
+    <Compile Include="Services\Interfaces\IDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IEmailsDataProovider.cs" />
     <Compile Include="Services\Interfaces\IRecipientsDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IRecipientsListsDataProvider.cs" />
+    <Compile Include="Services\Interfaces\ISchedulerTasksDataProvider.cs" />
+    <Compile Include="Services\Interfaces\ISendersDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IServersDataProvider.cs" />
     <Compile Include="Services\LinqToSql\LinqToSqlRecipientsDataProvider.cs" />
   </ItemGroup>
   <ItemGroup />

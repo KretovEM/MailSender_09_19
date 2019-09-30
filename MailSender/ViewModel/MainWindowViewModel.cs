@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using MailSenderLib.Data.LinqToSql;
+using MailSenderLib.Entityes;
 using MailSenderLib.Services;
 
 namespace WpfTestMailSender.ViewModel
