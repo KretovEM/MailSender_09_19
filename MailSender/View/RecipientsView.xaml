@@ -14,7 +14,7 @@
             <TextBox/>
         </DockPanel>
         <Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" Padding="30,10" Margin="0,7"
-                Content="ОБновить" Command="{Binding RefreshDataCommand}"/>
+                Content="Обновить" Command="{Binding RefreshDataCommand}"/>
         <DataGrid Grid.Row="1"
                   SelectedItem="{Binding SelectedRecipient}"
                   AutoGenerateColumns="False" 

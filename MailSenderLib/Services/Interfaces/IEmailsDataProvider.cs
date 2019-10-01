@@ -2,5 +2,5 @@
 
 namespace MailSenderLib.Services
 {
-    public interface IEmailsDataProovider : IDataProvider<Email> { }
+    public interface IEmailsDataProvider : IDataProvider<Email> { }
 }
