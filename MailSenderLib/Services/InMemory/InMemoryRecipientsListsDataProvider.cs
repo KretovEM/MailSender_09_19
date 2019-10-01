@@ -2,7 +2,7 @@
 
 namespace MailSenderLib.Services
 {
-    public class InMemoryRecipientsListsDataProvider : InDataProvider<RecipientsList>
+    public class InMemoryRecipientsListsDataProvider : InDataProvider<RecipientsList>, IRecipientsListsDataProvider
     {
         public override void Edit(int id, RecipientsList item)
         {

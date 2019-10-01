@@ -6,7 +6,7 @@ using MailSenderLib.Entityes;
 
 namespace MailSenderLib.Services
 {
-    public class InMemoryRecipientsDataProvider: InDataProvider<Recipient>
+    public class InMemoryRecipientsDataProvider: InDataProvider<Recipient>, IRecipientsDataProvider
     {
         public override void Edit(int id, Recipient item)
         {

@@ -3,7 +3,7 @@ using MailSenderLib.Entityes;
 
 namespace MailSenderLib.Services
 {
-    public class InMemoryEmailsDataProvider : InDataProvider<Email>
+    public class InMemoryEmailsDataProvider : InDataProvider<Email>, IEmailsDataProvider
     {
         public InMemoryEmailsDataProvider()
         {

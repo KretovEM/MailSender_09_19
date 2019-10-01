@@ -7,7 +7,12 @@
              mc:Ignorable="d"
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              d:DesignHeight="365" d:DesignWidth="270">
-    <Grid>
+    <Grid Margin="3">
+        <Grid.Resources>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="5,2"/>
+                </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
