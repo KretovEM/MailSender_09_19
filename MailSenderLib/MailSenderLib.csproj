@@ -85,6 +85,7 @@
     <Compile Include="Services\Interfaces\ISendersDataProvider.cs" />
     <Compile Include="Services\Interfaces\IServersDataProvider.cs" />
     <Compile Include="Services\LinqToSql\LinqToSqlRecipientsDataProvider.cs" />
+    <Compile Include="Service\StringEncoder.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
