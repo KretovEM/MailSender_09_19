@@ -1,18 +1,7 @@
-﻿using MailSenderLib.Data.LinqToSql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using MailSenderLib.Entityes;
 
 namespace MailSenderLib.Services
 {
-    public interface IRecipientsDataProvider
-    {
-        IEnumerable<Recipient> GetAll();
-
-        int Create(Recipient recipient);
-
-        void SaveChanges();
-    }
+    public interface IRecipientsDataProvider : IDataProvider<Recipient> { }
 }

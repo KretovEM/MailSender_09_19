@@ -50,6 +50,13 @@
       <DependentUpon>MailSenderDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\TestData.cs" />
+    <Compile Include="Entityes\Base\BaseEntity.cs" />
+    <Compile Include="Entityes\Base\HumanEntity.cs" />
+    <Compile Include="Entityes\Base\NamedEntity.cs" />
+    <Compile Include="Entityes\Email.cs" />
+    <Compile Include="Entityes\Recipient.cs" />
+    <Compile Include="Entityes\RecipientsList.cs" />
+    <Compile Include="Entityes\SchedulerTask.cs" />
     <Compile Include="Entityes\Sender.cs" />
     <Compile Include="Entityes\Server.cs" />
     <Compile Include="MailSenderService.cs" />
@@ -62,9 +69,23 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Services\InMemory\InMemory.cs" />
+    <Compile Include="Services\InMemory\InDataProvider.cs" />
+    <Compile Include="Services\InMemory\InMemoryEmailsDataProvider.cs" />
+    <Compile Include="Services\InMemory\InMemoryRecipientsDataProvider.cs" />
+    <Compile Include="Services\InMemory\InMemoryRecipientsListsDataProvider.cs" />
+    <Compile Include="Services\InMemory\InMemorySchedulerTasksDataProvider.cs" />
+    <Compile Include="Services\InMemory\InMemorySendersDataProvider.cs" />
+    <Compile Include="Services\InMemory\InMemoryServersDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IEmailsDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IMailSenderService.cs" />
     <Compile Include="Services\Interfaces\IRecipientsDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IRecipientsListsDataProvider.cs" />
+    <Compile Include="Services\Interfaces\ISchedulerTasksDataProvider.cs" />
+    <Compile Include="Services\Interfaces\ISendersDataProvider.cs" />
+    <Compile Include="Services\Interfaces\IServersDataProvider.cs" />
     <Compile Include="Services\LinqToSql\LinqToSqlRecipientsDataProvider.cs" />
+    <Compile Include="Service\StringEncoder.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
