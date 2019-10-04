@@ -14,7 +14,8 @@ namespace MailSenderConsoleTest
         static void Main(string[] args)
         {
             //ThreadTests.Start();
-            SynchronizationTests.Start();
+            //SynchronizationTests.Start();
+            ThreadPoolTests.Start();
             Console.ReadLine();
         }
     }
