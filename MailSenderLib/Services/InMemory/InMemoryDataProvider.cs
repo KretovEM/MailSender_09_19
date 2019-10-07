@@ -4,7 +4,7 @@ using MailSenderLib.Entityes.Base;
 
 namespace MailSenderLib.Services
 {
-    public abstract class InDataProvider<T> : IDataProvider<T> where T : BaseEntity
+    public abstract class InMemoryDataProvider<T> : IDataProvider<T> where T : BaseEntity
     {
         protected readonly List<T> _Items = new List<T>();
 

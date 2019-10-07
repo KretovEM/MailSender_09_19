@@ -3,9 +3,9 @@ using MailSenderLib.Entityes;
 
 namespace MailSenderLib.Services
 {
-    public class InMemoryEmailsDataProvider : InDataProvider<Email>, IEmailsDataProvider
+    public class InMemoryMemoryEmailsDataProvider : InMemoryDataProvider<Email>, IEmailsDataProvider
     {
-        public InMemoryEmailsDataProvider()
+        public InMemoryMemoryEmailsDataProvider()
         {
             _Items.AddRange(Enumerable.Range(1, 20).Select(i => new Email { Id = i, Subject = $"Сообщение {i}", Body = $"Тело письма {i}" }));
         }

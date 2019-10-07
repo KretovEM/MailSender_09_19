@@ -2,7 +2,7 @@
 
 namespace MailSenderLib.Services
 {
-    public class InMemoryServersDataProvider : InDataProvider<Server>, IServersDataProvider
+    public class InMemoryMemoryServersDataProvider : InMemoryDataProvider<Server>, IServersDataProvider
     {
         public override void Edit(int id, Server item)
         {

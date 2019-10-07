@@ -2,7 +2,7 @@
 
 namespace MailSenderLib.Services
 {
-    public class InMemorySchedulerTasksDataProvider : InDataProvider<SchedulerTask>, ISchedulerTasksDataProvider
+    public class InMemoryMemorySchedulerTasksDataProvider : InMemoryDataProvider<SchedulerTask>, ISchedulerTasksDataProvider
     {
         public override void Edit(int id, SchedulerTask item)
         {
