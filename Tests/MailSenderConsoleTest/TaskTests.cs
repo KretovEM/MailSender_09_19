@@ -43,7 +43,7 @@ namespace MailSenderConsoleTest
 
             var secondValueTask = Task.Run(() => GetStrLength(msg)); // Рекомендуемый и чаще всего встречаемый
 
-            //Console.WriteLine("str {0} - length:{1}", msg, second_value_task.Result);
+            //Console.WriteLine("str {0} - length:{1}", msg, secondValueTask.Result);
             var secondValueTaskContinuation = secondValueTask.ContinueWith(
                 completedTask => Console.WriteLine("str {0} - length:{1}", msg, completedTask.Result),
                 TaskContinuationOptions.OnlyOnRanToCompletion);

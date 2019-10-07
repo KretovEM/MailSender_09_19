@@ -122,7 +122,7 @@ namespace MailSenderWPFTest
             var reader = new StreamReader(stream);
             var words_count = 0;
             var seperators = new[] { ' ' };
-            var position = 0l;
+            var position = 0L;
             while (!reader.EndOfStream)
             {
                 Cancel.ThrowIfCancellationRequested();
