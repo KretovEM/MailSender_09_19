@@ -44,8 +44,8 @@ namespace MailSenderConsoleTest
             var processingTasks = new List<Task>();
             foreach (var msg in messages)
             {
-                //processing_tasks.Add(Task.Run(() => MessageProcessorAsync(msg, $"{msg}.txt"))); //асинхронно-параллельный 
-                //processing_tasks.Add(MessageProcessorAsync(msg, $"{msg}.txt")); // асинхронно-последовательный вызов
+                //processingTasks.Add(Task.Run(() => MessageProcessorAsync(msg, $"{msg}.txt"))); //асинхронно-параллельный 
+                //processingTasks.Add(MessageProcessorAsync(msg, $"{msg}.txt")); // асинхронно-последовательный вызов
             }
 
             Console.WriteLine("Все задачи сформированы. Ждём их завершения");
