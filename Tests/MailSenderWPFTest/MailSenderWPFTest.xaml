@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSenderWPFTest"
         mc:Ignorable="d"
-        Title="MailSenderWpfTestWindow" Height="450" Width="800">
+        Title="MailSenderWpfTestWindow" Height="160" Width="300">
     <Grid>
-        <Label Content="Имя пользователя" HorizontalAlignment="Left" Height="30" Margin="66,64,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Height="30" Margin="354,64,0,0" VerticalAlignment="Top" Width="175"/>
-        <PasswordBox HorizontalAlignment="Left" 
-                     VerticalAlignment="Top"
-                     Name="passboxPassword"
-                     Width="200" Height="20" 
-                     Margin="354,99,0,0"/>
-
-        <TextBox Name="tboxUserName" 
-                 Text="Имя пользователя" 
-                 Width="200" Height="20" 
-                 Margin="66,99,0,0"
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 TextWrapping="Wrap"/>
-        <Button Content="Отправить" Height="20" Width="200" Click="SendButtonClick" Margin="200,150,0,0"
+        <Button Name="BtnStart"
+                Content="Start" Click="BtnStart_OnClick"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                />
-
-
-
+                Margin="9,46,0,0" 
+                VerticalAlignment="Top" Width="75"/>
+        <TextBlock Name="ResultText" 
+                   HorizontalAlignment="Left"
+                   Margin="29,11,0,0"
+                   TextWrapping="Wrap" 
+                   Text="Результат будет здесь." 
+                   VerticalAlignment="Top"/>
+        <ProgressBar Name="ProgressInformer" 
+                     HorizontalAlignment="Left" 
+                     Height="20" 
+                     Margin="9,91,0,0"
+                     VerticalAlignment="Top" 
+                     Width="250"/>
+        <Button Name="BtnCancel" 
+                Content="Cancel" Click="BtnCancel_OnClick"
+                HorizontalAlignment="Left"
+                Margin="184,46,0,0" 
+                VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

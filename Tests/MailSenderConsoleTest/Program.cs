@@ -12,10 +12,14 @@ namespace MailSenderConsoleTest
     {
         static void Main(string[] args)
         {
-            //ThreadTests.Start();
-            //SynchronizationTests.Start();
-            ThreadPoolTests.Start();
+            //TPLTests.Start();
+            //TaskTests.Start();
+            //AsyncAwaitTests.Start();
+            AsyncAwaitTests.StartAsync();
+
+            Console.WriteLine("Главный поток завершён!");
             Console.ReadLine();
+            Console.WriteLine("Программа завершена...");
         }
     }
 

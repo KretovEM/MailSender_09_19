@@ -48,6 +48,27 @@ namespace MailSender.lib.Services
                 }
             }
         }
+        public async Task SendAsync(Email email, Sender from, Recipient to)
+        {
+            using (var client = new SmtpClient(_host, _port) { EnableSsl = _useSSL })
+            {
+                client.Credentials = new NetworkCredential
+                {
+                    UserName = _login,
+                    Password = _password
+                };
+
+                using (var message = new MailMessage())
+                {
+                    message.From = new MailAddress(from.Address, from.Name);
+                    message.To.Add(new MailAddress(to.Address, to.Name));
+                    message.Subject = email.Subject;
+                    message.Body = email.Body;
+
+                    await client.SendMailAsync(message).ConfigureAwait(false);
+                }
+            }
+        }
 
         public void Send(Email email, Sender from, IEnumerable<Recipient> to)
         {
@@ -59,6 +80,19 @@ namespace MailSender.lib.Services
         {
             foreach (var recipient in to)
                 ThreadPool.QueueUserWorkItem(_ => Send(email, from, recipient));
+        }
+
+        public async Task SendParallelAsync(Email email, Sender from, IEnumerable<Recipient> to)
+        {
+            await Task
+                .WhenAll(to.Select(recipient => SendAsync(email, from, recipient)))
+                .ConfigureAwait(false);
+        }
+
+        public async Task SendAsync(Email email, Sender from, IEnumerable<Recipient> to)
+        {
+            foreach (var recipient in to)
+                await SendAsync(email, from, recipient).ConfigureAwait(false);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace WpfTestMailSender.ValidationRules
         public string Pattern
         {
             get => _Regex?.ToString();
-            set => _Regex = value is null ? null : value == string.Empty ? null : new Regex(value);
+            set => _Regex = string.IsNullOrEmpty(value) ? null : new Regex(value);
         }
 
         public bool AllowNull { get; set; } = true;

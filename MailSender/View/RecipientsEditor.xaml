@@ -64,7 +64,6 @@
                 </Binding.ValidationRules>
             </Binding>
         </TextBox>
-        
 
         <UniformGrid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Margin="0,7,0,0"
                      VerticalAlignment="Top" HorizontalAlignment="Center"

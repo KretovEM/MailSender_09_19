@@ -3,9 +3,9 @@ using MailSenderLib.Entityes;
 
 namespace MailSenderLib.Services
 {
-    public class InMemorySendersDataProvider : InDataProvider<Sender>, ISendersDataProvider
+    public class InMemoryMemorySendersDataProvider : InMemoryDataProvider<Sender>, ISendersDataProvider
     {
-        public InMemorySendersDataProvider()
+        public InMemoryMemorySendersDataProvider()
         {
             _Items.AddRange(Enumerable.Range(1, 10).Select(i => new Sender
             {

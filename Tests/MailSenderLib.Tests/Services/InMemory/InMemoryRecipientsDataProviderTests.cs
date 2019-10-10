@@ -58,7 +58,7 @@ namespace MailSenderLib.Tests.Services.InMemory
         public void CreateNewRecipientInEmptyProvider()
         {
             #region Arrange
-            var data_provider = new InMemoryRecipientsDataProvider();
+            var data_provider = new InMemoryMemoryRecipientsDataProvider();
 
             var expected_recipient_name = "Получатель 1";
             var expected_recipient_address = "recipient1@server.com";
