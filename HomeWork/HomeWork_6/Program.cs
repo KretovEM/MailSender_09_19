@@ -36,7 +36,9 @@ namespace HomeWork_6
                 .ToArray();
 
 
-            TaskMethod();
+            //TaskMethod();
+            //Console.ReadLine();
+            TaskMethodAsync();
             Console.ReadLine();
             //UsualMethod();
             //Console.ReadLine();
@@ -81,6 +83,27 @@ namespace HomeWork_6
 
             Console.WriteLine("Все задачи сформированы. Ждём их завершения\n");
             Task.WaitAll(listTasks.ToArray());
+            Console.WriteLine("\nВсе задачи завершились.");
+
+            PrintMatrix(matrixResult);
+        }
+
+        static async void TaskMethodAsync()
+        {
+            var listTasks = new List<Task>();
+            for (int i = 0; i < matrixSize; i++)
+            {
+                for (int j = 0; j < matrixSize; j++)
+                {
+                    var rowIndex = i;
+                    var colIndex = j;
+                    listTasks.Add(Task.Run(() => Multiplication(rowIndex, colIndex)));
+                }
+            }
+
+            Console.WriteLine("Все задачи сформированы. Ждём их завершения\n");
+            var awaitingAllTask = Task.WhenAll(listTasks);
+            await awaitingAllTask;
             Console.WriteLine("\nВсе задачи завершились.");
 
             PrintMatrix(matrixResult);
