@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using System.Threading;
 using MailSenderConsoleTest.Data;
+using System.Data.Entity;
 
 namespace MailSenderConsoleTest
 {
@@ -13,6 +14,37 @@ namespace MailSenderConsoleTest
     {
         static void Main(string[] args)
         {
+            using (var db = new SongsDB())
+            {
+                //db.Configuration.AutoDetectChangesEnabled = false;
+
+                db.Database.Log = msg => Console.WriteLine("EF: {0}\r\n-----------------", msg);
+
+                var badArtists = db.Artists
+                   .Where(a => a.Name.EndsWith("2"))
+                   .Include(a => a.Tracks);// .Include(a => a.Tracks) - требование о загрузке данных из связанной таблицы
+
+                foreach (var badArtist in badArtists) 
+                {
+                    badArtist.Name = $"{badArtist.Name} - Bad";
+
+                    for (var i = 0; i < 10; i++)
+                        badArtist.Tracks.Add(new Track
+                        {
+                            Name = $"Bad track {i + 1} from badArtist.Name"
+                        });
+                }
+
+                Console.ReadLine();
+                Console.Clear();
+
+                //db.ChangeTracker.DetectChanges();
+                db.SaveChanges();
+
+            }
+
+            Console.ReadLine();
+
             using (var db = new SongsDB())
             {
                 //db.Database.Log = msg => Console.WriteLine("EF: {0}\r\n-----------------", msg);
