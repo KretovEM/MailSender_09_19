@@ -7,27 +7,6 @@
         mc:Ignorable="d"
         Title="MailSenderWpfTestWindow" Height="160" Width="300">
     <Grid>
-        <Button Name="BtnStart"
-                Content="Start" Click="BtnStart_OnClick"
-                HorizontalAlignment="Left"
-                Margin="9,46,0,0" 
-                VerticalAlignment="Top" Width="75"/>
-        <TextBlock Name="ResultText" 
-                   HorizontalAlignment="Left"
-                   Margin="29,11,0,0"
-                   TextWrapping="Wrap" 
-                   Text="Результат будет здесь." 
-                   VerticalAlignment="Top"/>
-        <ProgressBar Name="ProgressInformer" 
-                     HorizontalAlignment="Left" 
-                     Height="20" 
-                     Margin="9,91,0,0"
-                     VerticalAlignment="Top" 
-                     Width="250"/>
-        <Button Name="BtnCancel" 
-                Content="Cancel" Click="BtnCancel_OnClick"
-                HorizontalAlignment="Left"
-                Margin="184,46,0,0" 
-                VerticalAlignment="Top" Width="75"/>
+        
     </Grid>
 </Window>

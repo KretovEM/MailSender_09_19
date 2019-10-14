@@ -2,6 +2,7 @@ using GalaSoft.MvvmLight.Ioc;
 using CommonServiceLocator;
 using MailSenderLib.Data.LinqToSql;
 using MailSenderLib.Services;
+using MailSenderLib.Data.EF;
 
 namespace WpfTestMailSender.ViewModel
 {
@@ -23,7 +24,8 @@ namespace WpfTestMailSender.ViewModel
 
             services
                .TryRegister<IRecipientsDataProvider, LinqToSqlRecipientsDataProvider>()
-               .TryRegister(() => new MailSenderDBDataContext());
+               .TryRegister(() => new MailSenderDBDataContext())
+               .TryRegister(() => new MailSenderDB()); 
 
             //services
             //   .TryRegister<IRecipientsDataProvider, InMemoryMemoryRecipientsDataProvider>()
