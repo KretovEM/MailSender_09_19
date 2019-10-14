@@ -60,35 +60,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Artist.cs" />
-    <Compile Include="Data\Migrations\201910121115472_Initial.cs" />
-    <Compile Include="Data\Migrations\201910121115472_Initial.Designer.cs">
-      <DependentUpon>201910121115472_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Migrations\201910121127094_TrackStyleAdded.cs" />
-    <Compile Include="Data\Migrations\201910121127094_TrackStyleAdded.Designer.cs">
-      <DependentUpon>201910121127094_TrackStyleAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Migrations\Configuration.cs" />
-    <Compile Include="Data\SongsDB.cs" />
-    <Compile Include="Data\Track.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Data\Migrations\201910121115472_Initial.resx">
-      <DependentUpon>201910121115472_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Data\Migrations\201910121127094_TrackStyleAdded.resx">
-      <DependentUpon>201910121127094_TrackStyleAdded.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,7 +25,9 @@ namespace WpfTestMailSender.ViewModel
             services
                .TryRegister<IRecipientsDataProvider, LinqToSqlRecipientsDataProvider>()
                .TryRegister(() => new MailSenderDBDataContext())
-               .TryRegister(() => new MailSenderDB()); 
+               .TryRegister<MemoryDataContext>()
+               .TryRegister<DataContextProvider>();
+            //.TryRegister(() => new MailSenderDB()); 
 
             //services
             //   .TryRegister<IRecipientsDataProvider, InMemoryMemoryRecipientsDataProvider>()
