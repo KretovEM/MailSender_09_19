@@ -93,6 +93,8 @@
     <Compile Include="Services\EF\EFDataProvider.cs" />
     <Compile Include="Services\EF\EFDataProvider2.cs" />
     <Compile Include="Services\EF\EFRecipientsDataProvider.cs" />
+    <Compile Include="Services\EF\EFSendersDataProvider.cs" />
+    <Compile Include="Services\EF\EFSendersDataProvider2.cs" />
     <Compile Include="Services\InMemory\InMemoryDataProvider.cs" />
     <Compile Include="Services\InMemory\InMemoryEmailsDataProvider.cs" />
     <Compile Include="Services\InMemory\InMemoryRecipientsDataProvider.cs" />
