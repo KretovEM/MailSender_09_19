@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29215.179
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{72F95E12-52FB-4A49-A831-7F50ECE9ECD7}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HomeWork", "HomeWork", "{B7965EC2-26C2-4170-B216-52A56ACE9AF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_6", "HomeWork\HomeWork_6\HomeWork_6.csproj", "{E8F569CD-F56D-4640-9DAC-B64E6FD42628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLib", "Tests\TestLib\TestLib.csproj", "{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{E8F569CD-F56D-4640-9DAC-B64E6FD42628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8F569CD-F56D-4640-9DAC-B64E6FD42628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8F569CD-F56D-4640-9DAC-B64E6FD42628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{A80EB461-808C-4256-B47A-E8DC6FF05F37} = {72F95E12-52FB-4A49-A831-7F50ECE9ECD7}
 		{0FC9F580-ED85-4D4E-A3B0-5D81691DDC06} = {72F95E12-52FB-4A49-A831-7F50ECE9ECD7}
 		{E8F569CD-F56D-4640-9DAC-B64E6FD42628} = {B7965EC2-26C2-4170-B216-52A56ACE9AF6}
+		{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE} = {72F95E12-52FB-4A49-A831-7F50ECE9ECD7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {07B2D31F-F18E-4045-80A2-7271D2285128}

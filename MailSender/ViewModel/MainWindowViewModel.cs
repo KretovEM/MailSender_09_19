@@ -11,6 +11,25 @@ namespace WpfTestMailSender.ViewModel
     {
         private IRecipientsDataProvider _recipientsDataProvider;
 
+        private string _testProperty;
+
+        public string TestProperty
+        {
+            get => _testProperty;
+            set
+            {
+                _testProperty = value;
+                //RaisePropertyChanged();
+                //RaisePropertyChanged(nameof(TestProperty));
+                //RaisePropertyChanged("TestProperty");
+                RaisePropertyChanged(() => TestProperty);
+                RaisePropertyChanged(() => TestPropertyLength);
+            }
+        }
+
+        public int TestPropertyLength => _testProperty?.Length ?? -1;
+
+
         private string _WidowTitle = "Рассыльщик почты v0.1";
 
         public string WidowTitle
