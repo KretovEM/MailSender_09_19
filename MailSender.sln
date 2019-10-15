@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_6", "HomeWork\Home
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLib", "Tests\TestLib\TestLib.csproj", "{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderPlugin", "MailSenderPlugin\MailSenderPlugin.csproj", "{AA852819-60D5-4EF2-9C0C-D74D93EAC48A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D1B02E3-E7C4-4FDF-A4C3-67D6EE5D0BDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA852819-60D5-4EF2-9C0C-D74D93EAC48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA852819-60D5-4EF2-9C0C-D74D93EAC48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA852819-60D5-4EF2-9C0C-D74D93EAC48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA852819-60D5-4EF2-9C0C-D74D93EAC48A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

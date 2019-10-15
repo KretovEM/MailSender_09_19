@@ -3,6 +3,7 @@ using CommonServiceLocator;
 using MailSenderLib.Data.LinqToSql;
 using MailSenderLib.Services;
 using MailSenderLib.Data.EF;
+using MailSenderLib.Services.EF;
 
 namespace WpfTestMailSender.ViewModel
 {

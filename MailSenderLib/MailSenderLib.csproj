@@ -106,6 +106,7 @@
     <Compile Include="Services\Interfaces\IDataProvider.cs" />
     <Compile Include="Services\Interfaces\IEmailsDataProvider.cs" />
     <Compile Include="Services\Interfaces\IMailSenderService.cs" />
+    <Compile Include="Services\Interfaces\IPlugin.cs" />
     <Compile Include="Services\Interfaces\IRecipientsDataProvider.cs" />
     <Compile Include="Services\Interfaces\IRecipientsListsDataProvider.cs" />
     <Compile Include="Services\Interfaces\ISchedulerTasksDataProvider.cs" />
@@ -139,6 +140,9 @@
     <EmbeddedResource Include="Data\EF\Migrations\201910121209200_Initial.resx">
       <DependentUpon>201910121209200_Initial.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Plugins\TestPlugin.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
