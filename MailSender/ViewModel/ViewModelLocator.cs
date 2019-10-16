@@ -3,6 +3,7 @@ using CommonServiceLocator;
 using MailSenderLib.Data.LinqToSql;
 using MailSenderLib.Services;
 using MailSenderLib.Data.EF;
+using MailSenderLib.Services.EF;
 
 namespace WpfTestMailSender.ViewModel
 {
@@ -25,7 +26,9 @@ namespace WpfTestMailSender.ViewModel
             services
                .TryRegister<IRecipientsDataProvider, LinqToSqlRecipientsDataProvider>()
                .TryRegister(() => new MailSenderDBDataContext())
-               .TryRegister(() => new MailSenderDB()); 
+               .TryRegister<MemoryDataContext>()
+               .TryRegister<DataContextProvider>();
+            //.TryRegister(() => new MailSenderDB()); 
 
             //services
             //   .TryRegister<IRecipientsDataProvider, InMemoryMemoryRecipientsDataProvider>()
